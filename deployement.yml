@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
         - name: spring-cloud-discovery
-          image: naresh240/spring-boot-hello:v1
+          image: naresh240/spring-boot-hello:v2
