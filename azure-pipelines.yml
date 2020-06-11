@@ -19,10 +19,11 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: 'target/*.jar'
-    goals: 'install'
+    goals: 'install'  
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerhub'
+    containerRegistry: 'dockerCredetials'
+    command: 'login'
     repository: 'naresh240'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
