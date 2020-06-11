@@ -23,6 +23,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerCredetials'
-    repository: 'naresh240'
+    repository: 'naresh240/springboothello'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
