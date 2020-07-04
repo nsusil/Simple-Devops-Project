@@ -5,7 +5,7 @@
     "containerDefinitions": [
         {
             "name": "jenkins-test",
-            "image": "057996059708.dkr.ecr.us-west-2.amazonaws.com/hellospringboot:latest",
+            "image": "DOCKER_IMAGE_NAME",
             "portMappings": [
                 {
                     "containerPort": 8080,
