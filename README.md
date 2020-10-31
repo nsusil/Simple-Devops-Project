@@ -1,7 +1,6 @@
 # spring-boot-hello
 
-Pre-requisites:
------
+# Pre-requisites:
   - Install Java
   - Install GIT
   - Install Maven
