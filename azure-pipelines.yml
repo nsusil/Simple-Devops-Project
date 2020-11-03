@@ -19,10 +19,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: 'target/*.jar'
-    goals: 'install'  
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dockerCredetials'
-    repository: 'naresh240/springboothello'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    goals: 'install'
