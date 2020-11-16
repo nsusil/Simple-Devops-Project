@@ -31,7 +31,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'naresh-service-connection'
     appType: 'webAppContainer'
-    WebAppName: 'springboothelloworld'
+    WebAppName: 'springboothelloworld123'
     deployToSlotOrASE: true
     ResourceGroupName: 'naresh-rg-demo'
     SlotName: 'production'
