@@ -26,3 +26,15 @@ steps:
     repository: 'springboothello'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'naresh-service-connection'
+    appType: 'webAppContainer'
+    WebAppName: 'springboothelloworld'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'naresh-rg-demo'
+    SlotName: 'production'
+    DockerNamespace: 'naresh240'
+    DockerRepository: 'springboothello'
+    DockerImageTag: 'latest'
