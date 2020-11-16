@@ -35,6 +35,6 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'naresh-rg-demo'
     SlotName: 'production'
-    DockerNamespace: 'naresh240'
+    DockerNamespace: 'naresh240.azurecr.io'
     DockerRepository: 'springboothello'
     DockerImageTag: 'latest'
