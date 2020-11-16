@@ -9,6 +9,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  azureSubscriptionEndpoint: 'naresh-service-connection'
+  DockerNamespace: naresh240.azurecr.io
+  DockerRepository: springboothello
+  WebAppName: 'springboothelloworld123'
+
 steps:
 - task: Maven@3
   inputs:
@@ -26,15 +32,12 @@ steps:
     repository: 'springboothello'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-- task: AzureRmWebAppDeployment@4
+- task: AzureRMWebAppDeployment@4
+  displayName: Azure App Service Deploy
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'naresh-service-connection'
-    appType: 'webAppContainer'
-    WebAppName: 'springboothelloworld123'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'naresh-rg-demo'
-    SlotName: 'production'
-    DockerNamespace: 'naresh240.azurecr.io'
-    DockerRepository: 'springboothello'
-    DockerImageTag: 'latest'
+    appType: webAppContainer
+    ConnectedServiceName: $(azureSubscriptionEndpoint)
+    WebAppName: $(WebAppName)
+    DockerNamespace: $(DockerNamespace)
+    DockerRepository: $(DockerRepository)
+    DockerImageTag: $(Build.BuildId)
