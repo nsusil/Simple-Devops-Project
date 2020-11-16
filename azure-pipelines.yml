@@ -11,7 +11,7 @@ pool:
 
 variables:
   azureSubscriptionEndpoint: 'naresh-service-connection'
-  DockerNamespace: naresh240.azurecr.io
+  DockerNamespace: naresh240
   DockerRepository: springboothello
   WebAppName: 'springboothelloworld123'
 
