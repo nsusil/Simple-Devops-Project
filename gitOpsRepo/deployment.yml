@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-hello
+  name: springboot-deployment
   labels:
-    app: spring-boot-hello
+    app: springboot
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: spring-boot-hello
+      app: springboot
   template:
     metadata:
       labels:
-        app: spring-boot-hello
+        app: springboot
     spec:
       containers:
-        - name: spring-cloud-discovery
+        - name: springboot
           image: naresh240/spring-boot-hello:v2
