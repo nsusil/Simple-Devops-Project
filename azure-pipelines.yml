@@ -26,18 +26,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: 'target/*.jar'
     goals: 'install'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dockerACR'
-    repository: 'springboothello'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-- task: AzureRMWebAppDeployment@4
-  displayName: Azure App Service Deploy
-  inputs:
-    appType: webAppContainer
-    ConnectedServiceName: $(azureSubscriptionEndpoint)
-    WebAppName: $(WebAppName)
-    DockerNamespace: $(DockerNamespace)
-    DockerRepository: $(DockerRepository)
-    DockerImageTag: $(Build.BuildId)
